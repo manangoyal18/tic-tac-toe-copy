@@ -1,4 +1,3 @@
-%% src/tic_tac_toe_sup.erl
 -module(tic_tac_toe_sup).
 -behaviour(supervisor).
 

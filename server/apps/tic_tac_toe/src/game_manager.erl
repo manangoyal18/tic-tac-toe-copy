@@ -1,4 +1,3 @@
-%% src/game_manager.erl
 -module(game_manager).
 -behaviour(gen_server).
 
@@ -18,10 +17,6 @@ start_link() ->
 %% Called by websocket_handler
 join_game(PlayerPid) ->
     gen_server:cast(?MODULE, {join_game, PlayerPid}).
-
-%%%===================================================================
-%%% gen_server callbacks
-%%%===================================================================
 
 init([]) ->
     {ok, #state{}}.

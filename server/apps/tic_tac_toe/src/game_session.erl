@@ -1,4 +1,3 @@
-%% src/game_session.erl
 -module(game_session).
 -behaviour(gen_server).
 
@@ -7,24 +6,8 @@
 
 -include("tic_tac_toe.hrl").
 
-
-%-record(state, {
-%    board = [["", "", ""], ["", "", ""], ["", "", ""]],
-%    player_x,
-%    player_o,
-%    turn = <<"x">>
-%}).
-
-%%%===================================================================
-%%% API
-%%%===================================================================
-
 start_link(Player1, Player2) ->
     gen_server:start_link(?MODULE, {Player1, Player2}, []).
-
-%%%===================================================================
-%%% gen_server callbacks
-%%%===================================================================
 
 init({Player1, Player2}) ->
     process_flag(trap_exit, true),
@@ -81,31 +64,16 @@ terminate(_Reason, _State) ->
 code_change(_OldVsn, State, _Extra) ->
     {ok, State}.
 
-%%%===================================================================
-%%% Helper Functions
-%%%===================================================================
-
 is_valid_move(From, Symbol, Row, Col, #state{board = Board, player_x = X, player_o = O, turn = Turn}) ->
     WithinBounds = Row >= 0 andalso Row < 3 andalso Col >= 0 andalso Col < 3,
     IsCorrectPlayer = (Symbol == <<"x">> andalso From == X) orelse
                       (Symbol == <<"o">> andalso From == O),
     IsTurn = Symbol == Turn,
-    %IsEmpty = lists:nth(Row + 1, Board)
-     %         |> lists:nth(Col + 1) == <<"">>,
     IsEmpty = lists:nth(Col + 1, lists:nth(Row + 1, Board)) == <<"">>,
 
     WithinBounds andalso IsCorrectPlayer andalso IsTurn andalso IsEmpty.
 
 update_board(Board, Row, Col, Symbol) ->
-  % lists:mapfoldl(fun(R, I) ->
-  %     if I == Row ->
-  %         {lists:mapfoldl(fun(C, J) ->
-  %             if J == Col -> {Symbol, J + 1}; true -> {C, J + 1} end
-  %         end, 0, R) |> element(1), I + 1};
-  %     true ->
-  %         {R, I + 1}
-  %     end
-  % end, 0, Board) |> element(1).
   element(1, lists:mapfoldl(fun(R, I) ->
         if I == Row ->
             {UpdatedRow, _} = lists:mapfoldl(fun(C, J) ->

@@ -1,4 +1,3 @@
-%% src/websocket_handler.erl
 -module(websocket_handler).
 -behaviour(cowboy_websocket).
 

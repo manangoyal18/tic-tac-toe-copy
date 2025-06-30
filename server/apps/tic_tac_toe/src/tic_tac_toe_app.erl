@@ -1,4 +1,3 @@
-%% src/tic_tac_toe_app.erl
 -module(tic_tac_toe_app).
 -behaviour(application).
 
