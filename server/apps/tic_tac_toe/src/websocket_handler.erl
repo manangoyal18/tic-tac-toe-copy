@@ -27,7 +27,7 @@ websocket_init(_StateMap) ->
     {ok, #ws_state{}}.
 
 %% Handle incoming message from client
-websocket_handle({text, Msg}, State = #ws_state{game_pid = undefined}) ->
+websocket_handle({text, _Msg}, State = #ws_state{game_pid = undefined}) ->
     %% Ignore any input before symbol assignment
     {ok, State};
 
@@ -63,9 +63,9 @@ websocket_info(_Other, State) ->
     {ok, State}.
 
 %% On disconnect
-terminate(_Reason, _Req, State = #ws_state{game_pid = undefined}) ->
+terminate(_Reason, _Req, _State = #ws_state{game_pid = undefined}) ->
     ok;
 
-terminate(_Reason, _Req, State = #ws_state{game_pid = GamePid}) ->
+terminate(_Reason, _Req, _State = #ws_state{game_pid = GamePid}) ->
     GamePid ! {player_disconnected, self()},
     ok.
