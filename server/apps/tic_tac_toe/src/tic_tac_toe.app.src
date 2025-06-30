@@ -1,0 +1,16 @@
+{application, tic_tac_toe,
+ [
+  {description, "Online Multiplayer Tic Tac Toe Game"},
+  {vsn, "0.1.0"},
+  {registered, [tic_tac_toe_sup, game_manager]},
+  {mod, {tic_tac_toe_app, []}},
+  {applications, [
+      kernel,
+      stdlib,
+      cowboy,
+      jsone
+  ]},
+  {env, [
+      {websocket_port, 8084}
+  ]}
+ ]}.

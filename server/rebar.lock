@@ -1,0 +1,28 @@
+{"1.2.0",
+[{<<"cowboy">>,{pkg,<<"cowboy">>,<<"2.13.0">>},0},
+ {<<"cowlib">>,{pkg,<<"cowlib">>,<<"2.15.0">>},1},
+ {<<"jsone">>,{pkg,<<"jsone">>,<<"1.7.0">>},0},
+ {<<"jsx">>,{pkg,<<"jsx">>,<<"3.1.0">>},0},
+ {<<"quickrand">>,
+  {git,"https://github.com/okeuday/quickrand.git",
+       {ref,"036f1a2037de541302438f7d0a31d5122aae98e2"}},
+  1},
+ {<<"ranch">>,{pkg,<<"ranch">>,<<"1.8.0">>},0},
+ {<<"uuid">>,
+  {git,"https://github.com/okeuday/uuid.git",
+       {ref,"8e8a34e52817ab9e2a9378cf3b8ddeeed7b3cbae"}},
+  0}]}.
+[
+{pkg_hash,[
+ {<<"cowboy">>, <<"09D770DD5F6A22CC60C071F432CD7CB87776164527F205C5A6B0F24FF6B38990">>},
+ {<<"cowlib">>, <<"3C97A318A933962D1C12B96AB7C1D728267D2C523C25A5B57B0F93392B6E9E25">>},
+ {<<"jsone">>, <<"1E3BD7D5DD44BB2EB0797DDDEA1CBF2DDAB8D9F29E499A467CA171C23F5984EA">>},
+ {<<"jsx">>, <<"D12516BAA0BB23A59BB35DCCAF02A1BD08243FCBB9EFE24F2D9D056CCFF71268">>},
+ {<<"ranch">>, <<"8C7A100A139FD57F17327B6413E4167AC559FBC04CA7448E9BE9057311597A1D">>}]},
+{pkg_hash_ext,[
+ {<<"cowboy">>, <<"E724D3A70995025D654C1992C7B11DBFEA95205C047D86FF9BF1CDA92DDC5614">>},
+ {<<"cowlib">>, <<"4F00C879A64B4FE7C8FCB42A4281925E9FFDB928820B03C3AD325A617E857532">>},
+ {<<"jsone">>, <<"A3A33712EE6BC8BE10CFA21C7C425A299DE4C5A8533F9F931E577A6D0E8F5DBD">>},
+ {<<"jsx">>, <<"0C5CC8FDC11B53CC25CF65AC6705AD39E54ECC56D1C22E4ADB8F5A53FB9427F3">>},
+ {<<"ranch">>, <<"49FBCFD3682FAB1F5D109351B61257676DA1A2FDBE295904176D5E521A2DDFE5">>}]}
+].
